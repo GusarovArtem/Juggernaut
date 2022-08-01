@@ -1,4 +1,4 @@
-# Juggernaut - Online-Store
+# Juggernaut - Online Store
 
  Frontend: 
 1. React JS
