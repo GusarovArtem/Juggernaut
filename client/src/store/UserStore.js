@@ -17,8 +17,7 @@ export default class UserStore {
     get isAuth() {
         return this._isAuth
     }
-
     get user() {
-        return this._user;
+        return this._user
     }
 }
