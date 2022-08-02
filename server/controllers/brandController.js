@@ -1,5 +1,4 @@
-const {Brand} = require("../models/models")
-const ApiError = require("../error/ApiError")
+const {Brand} = require('../models/models')
 
 class BrandController {
     async create(req, res) {
@@ -12,7 +11,7 @@ class BrandController {
         const brands = await Brand.findAll()
         return res.json(brands)
     }
-}
 
+}
 
 module.exports = new BrandController()

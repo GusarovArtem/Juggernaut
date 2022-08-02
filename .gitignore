@@ -13,3 +13,4 @@
 /server/.env
 /client/node_modules/
 /client/package-lock.json
+/client/.env

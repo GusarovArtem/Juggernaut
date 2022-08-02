@@ -7,12 +7,13 @@ import {ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE} from "../utils/consts";
 import {Button} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
 import Container from "react-bootstrap/Container";
-import {useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 const NavBar = observer(() => {
     const {user} = useContext(Context)
-    const history = useHistory()
+    const history = useNavigate()
 
     const logOut = () => {
+        localStorage.removeItem('token')
         user.setUser({})
         user.setIsAuth(false)
     }
@@ -25,7 +26,7 @@ const NavBar = observer(() => {
                     <Nav className="ml-auto" style={{color: 'white'}}>
                         <Button
                             variant={"outline-light"}
-                            onClick={() => history.push(ADMIN_ROUTE)}
+                            onClick={() => history(ADMIN_ROUTE)}
                         >
                             Admin
                         </Button>
@@ -39,7 +40,7 @@ const NavBar = observer(() => {
                     </Nav>
                     :
                     <Nav className="ml-auto" style={{color: 'white'}}>
-                        <Button variant={"outline-light"} onClick={() => history.push(LOGIN_ROUTE)}>Sign in</Button>
+                        <Button variant={"outline-light"} onClick={() => history(LOGIN_ROUTE)}>Sign in</Button>
                     </Nav>
                 }
             </Container>
