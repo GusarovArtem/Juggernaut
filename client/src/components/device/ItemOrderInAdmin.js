@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Button, Col, ListGroup, Modal, Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
-import {fetchChangeStatusOrder, fetchDeleteOrder} from "../api/order";
-import {ORDER_ROUTE} from "../utils/consts/orderRoutes";
+import {fetchChangeStatusOrder, fetchDeleteOrder} from "../../api/order";
+import {ORDER_ROUTE} from "../../utils/consts/orderRoutes";
 
 const ItemOneOrderInAdmin = ({id, complete, mobile, createdAt, updatedAt, userId, reRender}) => {
     const [modalDelete, setShowDelete] = useState(false);
