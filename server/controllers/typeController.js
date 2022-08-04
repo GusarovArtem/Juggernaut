@@ -1,5 +1,4 @@
 const {Type} = require('../models/models')
-const ApiError = require('../error/ApiError')
 
 class TypeController {
     async create(req, res) {
@@ -11,6 +10,25 @@ class TypeController {
     async getAll(req, res) {
         const types = await Type.findAll()
         return res.json(types)
+    }
+
+    async delete(req, res) {
+        try {
+            const {id} = req.params
+            await Type.findOne({where: {id}})
+                .then(async data => {
+                    if (data) {
+                        await Type.destroy({where: {id}})
+                            .then(() => {
+                                return res.json("Type deleted")
+                            })
+                    } else {
+                        return res.json("This type doesn't exist")
+                    }
+                })
+        } catch (e) {
+            res.json(e)
+        }
     }
 }
 
