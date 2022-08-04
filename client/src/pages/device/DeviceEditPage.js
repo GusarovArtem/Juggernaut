@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Button, Col, Container, Dropdown, Form, Image, Modal, Row} from "react-bootstrap";
 import {useParams, useNavigate} from 'react-router-dom';
-import {Context} from "../index";
-import {fetchDeleteDevice, fetchOneDevice, updateDevices} from "../api/device";
-import {ADMIN_ROUTE} from "../utils/consts/userRoutes";
+import {Context} from "../../index";
+import {fetchDeleteDevice, fetchOneDevice, updateDevices} from "../../api/device";
+import {ADMIN_ROUTE} from "../../utils/consts/userRoutes";
 
 
 const DevicePageEdit = () => {

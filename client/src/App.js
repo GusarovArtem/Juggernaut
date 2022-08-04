@@ -1,13 +1,13 @@
 import React, {useContext, useEffect, useState} from "react";
 import {BrowserRouter} from "react-router-dom";
 import {observer} from "mobx-react-lite";
-import AppRouter from "./components/AppRouter";
 import {Container, Spinner} from "react-bootstrap";
 import {Context} from "./index";
 import {getDeviceFromBasket} from "./api/basket";
-import NavBar from "./components/NavBar";
-import Footbar from "./components/FootBar";
 import {check} from "./api/user";
+import NavBar from "./components/shop/NavBar";
+import AppRouter from "./components/shop/AppRouter";
+import Footbar from "./components/shop/FootBar";
 
 const App = observer(() => {
     const {user, basket} = useContext(Context);

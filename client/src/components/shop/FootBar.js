@@ -4,8 +4,8 @@ import {observer} from "mobx-react-lite";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faInstagram, faYoutube, faTelegram, faViber} from "@fortawesome/free-brands-svg-icons";
 import {NavLink} from "react-router-dom";
-import {CONTACTS_ROUTE, SHIPPING_PAYMENT_ROUTE, SHOP_ROUTE} from "../utils/consts/shopRoutes";
-import Contacts from "../pages/shop/Contacts";
+import {CONTACTS_ROUTE, SHIPPING_PAYMENT_ROUTE, SHOP_ROUTE} from "../../utils/consts/shopRoutes";
+import Contacts from "../../pages/shop/Contacts";
 
 const Footbar = observer(() => {
     return (

@@ -4,11 +4,11 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
-import {login, registration} from "../api/user";
 import {observer} from "mobx-react-lite";
-import {Context} from "../index";
-import {LOGIN_ROUTE, REGISTRATION_ROUTE} from "../utils/consts/userRoutes";
-import {SHOP_ROUTE} from "../utils/consts/shopRoutes";
+import {Context} from "../../index";
+import {LOGIN_ROUTE, REGISTRATION_ROUTE} from "../../utils/consts/userRoutes";
+import {login, registration} from "../../api/user";
+import {SHOP_ROUTE} from "../../utils/consts/shopRoutes";
 
 const Auth = observer(() => {
     const {user} = useContext(Context)

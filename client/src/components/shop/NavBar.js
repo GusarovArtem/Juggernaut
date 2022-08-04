@@ -1,5 +1,4 @@
 import React, {useContext} from 'react';
-import {Context} from "../index";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {NavLink} from "react-router-dom";
@@ -7,9 +6,10 @@ import {Button} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
 import Container from "react-bootstrap/Container";
 import {useNavigate} from 'react-router-dom'
-import {SHOP_ROUTE} from "../utils/consts/shopRoutes";
-import {ADMIN_ROUTE, LOGIN_ROUTE} from "../utils/consts/userRoutes";
-import {BASKET_ROUTE} from "../utils/consts/deviceRoutes";
+import {ADMIN_ROUTE, LOGIN_ROUTE} from "../../utils/consts/userRoutes";
+import {Context} from "../../index";
+import {SHOP_ROUTE} from "../../utils/consts/shopRoutes";
+import {BASKET_ROUTE} from "../../utils/consts/deviceRoutes";
 const NavBar = observer(() => {
     const {user} = useContext(Context)
     const history = useNavigate()

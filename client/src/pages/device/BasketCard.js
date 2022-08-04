@@ -1,11 +1,11 @@
 import React, {useContext} from 'react';
 import {observer} from "mobx-react-lite";
-import {Context} from "../index";
 import {Button, Col, Image, Row} from "react-bootstrap";
 import emptyBasket from "./../assets/emptyBasket.jpg";
 import {NavLink} from "react-router-dom";
-import {ORDERING_ROUTE} from "../utils/consts/orderRoutes";
-import ItemFromBasket from "../components/ItemFromBasket";
+import {Context} from "../../index";
+import {ORDERING_ROUTE} from "../../utils/consts/orderRoutes";
+import ItemFromBasket from "../../components/device/ItemFromBasket";
 
 const BasketCard = observer(() => {
     const {basket} = useContext(Context);

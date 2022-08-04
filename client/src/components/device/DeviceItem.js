@@ -3,7 +3,7 @@ import {Card, Col, Image} from "react-bootstrap";
 
 import star from './../assets/star.png';
 import {useNavigate} from 'react-router-dom';
-import {DEVICE_ROUTE} from "../utils/consts/deviceRoutes";
+import {DEVICE_ROUTE} from "../../utils/consts/deviceRoutes";
 
 const DeviceItem = ({device}) => {
     const history = useNavigate();

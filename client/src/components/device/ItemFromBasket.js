@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Button, Card, Col, Image, Row} from "react-bootstrap";
-import {Context} from "../index";
 import {NavLink} from "react-router-dom";
+import {Context} from "../../index";
 
 const ItemFromBasket = ({device}) => {
     const {basket, user} = useContext(Context);

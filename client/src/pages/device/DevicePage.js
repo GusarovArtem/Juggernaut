@@ -1,14 +1,15 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {Button, Card, Col, Container, Image, Row} from "react-bootstrap";
+import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import bigStar from './../assets/star.png';
 import {useParams} from 'react-router-dom';
-import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 import ReactImageMagnify from 'react-image-magnify';
-import {fetchOneDevice} from "../api/device";
-import {addRating, checkRating} from "../api/rating";
-import {addDeviceToBasket} from "../api/basket";
-import RatingStars from "../components/RatingStars";
+import {Context} from "../../index";
+import {fetchOneDevice} from "../../api/device";
+import {addRating, checkRating} from "../../api/rating";
+import {addDeviceToBasket} from "../../api/basket";
+import RatingStars from "../../components/RatingStars";
+
 
 const DevicePage = observer(() => {
     const {user, basket} = useContext(Context);

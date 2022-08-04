@@ -11,13 +11,14 @@ import {
     Pagination,
     Row
 } from "react-bootstrap";
-import CreateDevice from "../components/modals/CreateDevice";
-import CreateBrand from "../components/modals/CreateBrand";
-import CreateType from "../components/modals/CreateType";
+import {getAllDevicesInAdminPage} from "../../api/device";
+import CreateBrand from "../../components/modals/CreateBrand";
+import CreateDevice from "../../components/modals/CreateDevice";
+import DeleteBrandOrType from "../../components/modals/DeleteBrandOrType";
+import CreateType from "../../components/modals/CreateType";
+import {DEVICE_EDIT_ROUTE} from "../../utils/consts/deviceRoutes";
 import {NavLink} from "react-router-dom";
-import DeleteBrandOrType from "../components/modals/DeleteBrandOrType";
-import {getAllDevicesInAdminPage} from "../api/device";
-import {DEVICE_EDIT_ROUTE} from "../utils/consts/deviceRoutes";
+
 
 const Admin = () => {
     const [brandVisible, setBrandVisible] = useState(false);
