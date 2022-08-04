@@ -1,6 +1,6 @@
 const uuid = require('uuid')
 const path = require('path');
-const {Device, DeviceInfo} = require('../models/models')
+const {Device, DeviceInfo, BasketDevice} = require('../models/models')
 const ApiError = require('../error/ApiError');
 
 class DeviceController {
@@ -60,6 +60,27 @@ class DeviceController {
             },
         )
         return res.json(device)
+    }
+
+    async delete(req, res) {
+        try {
+            const {id} = req.params;
+            await Device.findOne({where: {id}})
+                .then(async data => {
+                    if (data) {
+                        await Device.destroy({where: {id}}).then(() => {
+                            return res.json("Device deleted")
+                        })
+                    } else {
+                        return res.json("This device doesn't exist")
+                    }
+
+                    await OrderDevice.destroy({where: {deviceId: id}})
+                    await BasketDevice.destroy({where: {deviceId: id}})
+                })
+        } catch (e) {
+            return res.json(e)
+        }
     }
 }
 
